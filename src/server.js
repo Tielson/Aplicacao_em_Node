@@ -8,6 +8,12 @@ const cors = require("cors")
 const express = require("express")
 const routes = require('./routes')
 
+const allowedOrigins = ['https://rocketmoviees.netlify.app/'];
+
+const options = {
+  origin: allowedOrigins
+}
+
 migrationsRun()
 
 
@@ -15,7 +21,7 @@ const app = express()
 app.use(express.json())
 
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER))
-app.use(cors())
+app.use(cors(options))
 
 app.use(routes)
 
