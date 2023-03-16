@@ -2,7 +2,6 @@ const createNotes = `
   CREATE TABLE IF NOT EXISTS notes (
 	  id INTEGER PRIMARY KEY AUTOINCREMENT,
 	  title VARCHAR,
-	  description VARCHAR,
    	  rating INTEGER,
 	  user_id INTEGER, 
 	  overview INTEGER, 
